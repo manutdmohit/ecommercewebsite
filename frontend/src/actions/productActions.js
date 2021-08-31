@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { errorMonitor } from 'events';
 import {
   PRODUCT_LIST_REQUEST,
   PRODUCT_LIST_SUCCESS,
