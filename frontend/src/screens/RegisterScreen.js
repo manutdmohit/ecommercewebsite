@@ -30,7 +30,7 @@ const LoginScreen = ({ location, history }) => {
   const submitHandler = (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
-      setMessage('Passwords do not match');
+      setMessage('Password and Confrim Passowrd do not match');
     } else {
       dispatch(register(name, email, password));
     }
