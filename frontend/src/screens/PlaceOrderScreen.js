@@ -67,8 +67,8 @@ const PlaceOrderScreen = () => {
                         <Link to={`/product/${item.product}`}>{item.name}</Link>
                       </Col>
                       <Col md={4}>
-                        {item.qty} x {item.price} =
-                        ${(
+                        {item.qty} x {item.price} = $
+                        {(
                           Math.round(item.qty * item.price * 100) / 100
                         ).toFixed(2)}
                       </Col>
