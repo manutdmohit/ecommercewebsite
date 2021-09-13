@@ -32,7 +32,7 @@ const addOrderItems = asynchandler(async (req, res) => {
   }
 });
 
-// create new order // post // /api/orders //private
+// create get order // get // /api/orders/id //private
 const getOrderById = asynchandler(async (req, res) => {
   const order = await Order.findById(req.params.id).populate(
     'user',
