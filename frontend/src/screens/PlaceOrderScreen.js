@@ -33,7 +33,6 @@ const PlaceOrderScreen = ({ history }) => {
 
   const orderCreate = useSelector((state) => state.orderCreate);
   const { order, success, error } = orderCreate;
-  console.log(order);
 
   useEffect(() => {
     if (success) {
@@ -55,8 +54,6 @@ const PlaceOrderScreen = ({ history }) => {
     );
   };
 
-  
-
   return (
     <>
       <CheckOutSteps step1 step2 step3 step4 />
@@ -64,6 +61,7 @@ const PlaceOrderScreen = ({ history }) => {
         <Col md={8}>
           <ListGroup.Item>
             <h2>Shipping</h2>
+            
             <p>
               <strong>Address:</strong>
               {cart.shippingAddress.address},{cart.shippingAddress.city},
