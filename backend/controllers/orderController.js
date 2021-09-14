@@ -46,7 +46,7 @@ const getOrderById = asynchandler(async (req, res) => {
   }
 });
 
-//order paid or not // get // /api/orders/id/pay //private
+//update order to paid // get // /api/orders/id/pay //private
 const updateOrderToPaid = asynchandler(async (req, res) => {
   const order = await Order.findById(req.params.id);
   if (order) {
@@ -67,4 +67,10 @@ const updateOrderToPaid = asynchandler(async (req, res) => {
   }
 });
 
-export { addOrderItems, getOrderById, updateOrderToPaid };
+//get logged in user orders // get // /api/orders/myorders //private
+const getMyOrders = asynchandler(async (req, res) => {
+  const orders = await Order.find({ user: req.user._id });
+  res.json(orders);
+});
+
+export { addOrderItems, getOrderById, updateOrderToPaid, getMyOrders };
