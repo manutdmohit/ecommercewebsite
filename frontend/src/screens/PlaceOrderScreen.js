@@ -61,7 +61,7 @@ const PlaceOrderScreen = ({ history }) => {
         <Col md={8}>
           <ListGroup.Item>
             <h2>Shipping</h2>
-            
+
             <p>
               <strong>Address:</strong>
               {cart.shippingAddress.address},{cart.shippingAddress.city},
@@ -71,7 +71,7 @@ const PlaceOrderScreen = ({ history }) => {
 
           <ListGroup.Item>
             <h2>Payment Method</h2>
-            <strong>Method:</strong>
+            <strong>Method: </strong>
             {cart.paymentMethod}
           </ListGroup.Item>
 
