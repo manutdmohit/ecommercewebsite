@@ -2,8 +2,6 @@ import { Container, Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { logout } from '../actions/userActions';
-import { ORDER_LIST_MY_RESET } from '../constants/orderConstants';
-import { USER_DETAILS_RESET } from '../constants/userConstants';
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -12,8 +10,6 @@ const Header = () => {
 
   const logoutHandler = () => {
     dispatch(logout());
-    dispatch({ type: ORDER_LIST_MY_RESET });
-    dispatch({ type: USER_DETAILS_RESET });
   };
   return (
     <header>
