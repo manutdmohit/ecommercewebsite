@@ -53,6 +53,7 @@ const registerUser = asynchandler(async (req, res) => {
   }
 });
 
+// get user profile // get // api/users/profile @access Private
 const getUserProfile = asynchandler(async (req, res) => {
   const user = await User.findById(req.user._id);
 
@@ -95,4 +96,10 @@ const updateUserProfile = asynchandler(async (req, res) => {
   }
 });
 
-export { authUser, registerUser, getUserProfile, updateUserProfile };
+// get all users //  get //get /api/users // private/admin
+const getUsers = asynchandler(async (req, res) => {
+  const users = await User.find({});
+  res.json(users);
+});
+
+export { authUser, registerUser, getUserProfile, updateUserProfile, getUsers };
