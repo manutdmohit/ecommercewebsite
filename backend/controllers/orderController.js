@@ -50,14 +50,14 @@ const getOrderById = asynchandler(async (req, res) => {
 const updateOrderToPaid = asynchandler(async (req, res) => {
   const order = await Order.findById(req.params.id);
   if (order) {
-    (order.isPaid = true),
-      (order.paidAt = Date.now()),
-      (order.paymentResult = {
-        id: req.body.id,
-        status: req.body.status,
-        update_time: req.body.update_time,
-        email_address: req.body.payer.email_address,
-      });
+    order.isPaid = true;
+    order.paidAt = Date.now();
+    order.paymentResult = {
+      id: req.body.id,
+      status: req.body.status,
+      update_time: req.body.update_time,
+      email_address: req.body.payer.email_address,
+    };
 
     const updatedOrder = await order.save();
     res.json(updatedOrder);
@@ -67,7 +67,21 @@ const updateOrderToPaid = asynchandler(async (req, res) => {
   }
 });
 
-//get logged in user orders // get // /api/orders/myorders //private
+// update order to delivered // get // /api/orders/id/deliver //private/admin
+const updateOrderToDelivered = asynchandler(async (req, res) => {
+  const order = await Order.findById(req.params.id);
+  if (order) {
+    (order.isDelivered = true), (order.deliveredAt = Date.now());
+
+    const updatedOrder = await order.save();
+    res.json(updatedOrder);
+  } else {
+    res.status(404);
+    throw new Error('Order not found');
+  }
+});
+
+//get logged in user ord ers // get // /api/orders/myorders //private
 const getMyOrders = asynchandler(async (req, res) => {
   const orders = await Order.find({ user: req.user._id });
   res.json(orders);
@@ -85,4 +99,5 @@ export {
   updateOrderToPaid,
   getMyOrders,
   getOrders,
+  updateOrderToDelivered,
 };
