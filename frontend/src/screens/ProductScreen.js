@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Meta from '../components/Meta';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   Row,
@@ -72,6 +73,7 @@ const ProductScreen = ({ history, match }) => {
         <Message variant="danger">{error}</Message>
       ) : (
         <>
+        <Meta title={product.name}/>
           <Row>
             <Col md={6}>
               <Image src={product.image} alt={product.name} fluid />
@@ -198,9 +200,9 @@ const ProductScreen = ({ history, match }) => {
                           onChange={(e) => setComment(e.target.value)}
                         ></Form.Control>
                       </Form.Group>
-                        <Button type="submit" variant="primary">
-                          Submit
-                        </Button>
+                      <Button type="submit" variant="primary">
+                        Submit
+                      </Button>
                     </Form>
                   ) : (
                     <Message>
