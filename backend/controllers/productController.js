@@ -128,6 +128,12 @@ const createProductReview = asynchandler(async (req, res) => {
   }
 });
 
+// get top rated prodcuts // post // /api/products/top //public
+const getTopProducts = asynchandler(async (req, res) => {
+  const products = await Product.find({}).sort({ rating: -1 }).limit(3);
+  res.json(products);
+});
+
 export {
   getProducts,
   getProductById,
@@ -135,4 +141,5 @@ export {
   createProduct,
   updateProduct,
   createProductReview,
+  getTopProducts,
 };
