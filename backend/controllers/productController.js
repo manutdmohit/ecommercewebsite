@@ -6,7 +6,7 @@ const getProducts = asynchandler(async (req, res) => {
   const keyword = req.query.keyword
     ? {
         name: {
-          $regex: req.query.keyword.trim(),
+          $regex: req.query.keyword,
           $options: 'i',
         },
       }
