@@ -3,4 +3,4 @@
 Admin can create new products, delete users, make a user admin or not.  
 Products can be purchased using Paypal (sandbox).  
   
-<img src="https://raw.githubusercontent.com/manutdmohit/ecommercewebsite/master/frontend/public/images/airpods.jpg" width="500" height="400">
+<img src="https://raw.githubusercontent.com/manutdmohit/ecommercewebsite/master/frontend/uploads/image-1632024419399.jpg" width="500" height="400">
