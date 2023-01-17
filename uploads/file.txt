@@ -1,2 +1,2 @@
 Add to git repo
-changes made by branch 1
+changes made by branch 1 and changes 2nd time
